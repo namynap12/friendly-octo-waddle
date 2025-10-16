@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Loading…</title>
+  <style>
+    :root {
+      --blue: #0072C6; /* color from your image */
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .loader {
+      width: 90px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--blue);
+      animation: bounce 0.8s infinite ease-in-out;
+    }
+
+    .dot:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+    .dot:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes bounce {
+      0%, 80%, 100% {
+        transform: scale(0);
+      }
+      40% {
+        transform: scale(1);
+      }
+    }
+
+    .text {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="loader">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+  <div class="text">Loading...</div>
+
+  <script>
+    // Wait 2 seconds then go back
+    setTimeout(() => {
+      history.back();
+    }, 2000);
+  </script>
+</body>
+</html>
